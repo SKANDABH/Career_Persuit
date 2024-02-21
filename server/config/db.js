@@ -7,7 +7,7 @@ const pool=mysql.createPool
     password:"8088795774aA#",
     database:"JOBPORT",
     waitForConnection:true,
-    connectionLimit:10,
+    connectionLimit:30,
     queueLimit:0
 });
 const db=pool.promise();
@@ -34,6 +34,23 @@ return db.query('USE JOBPORT')})
   .then(() => {
     console.log('Users table created');
   })
+
+    .then(()=>
+    {
+      return db.execute(`
+      CREATE TABLE IF NOT EXISTS company(
+        companyname varchar(20) NOT NULL,
+        empid varchar(10) NOT NULL,
+        password varchar(15) NOT NULL,
+        description TEXT,
+        industry TEXT,
+        primary key(empid)
+      ); `);
+
+    })
+    .then(() => {
+      console.log('company table created');
+    })
   .catch((error) => {
     console.error('Error creating table:', error);
   });

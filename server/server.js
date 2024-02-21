@@ -27,6 +27,10 @@ const signupRoutes = require('./routes/signupRoutes');
 app.use('/api/signup', signupRoutes);
 const loginRoute = require('./routes/loginRoute');
 app.use('/api/login', loginRoute);
+const ESignupRoutes=require('./routes/ESignupRoutes');
+app.use('/api/ESignup',ESignupRoutes);
+const EloginRoutes=require('./routes/EloginRoutes');
+app.use('/api/Elogin',EloginRoutes);
 
     app.listen(port, () => {
       console.log(`The server has started on port ${port}`);
