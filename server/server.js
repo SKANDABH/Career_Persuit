@@ -4,28 +4,30 @@ const app = express();
 const port = 3000;
 const mysql = require("mysql2");
 const path = require('path');
-
+const db1 = require('./config/db');
 app.use(express.json());
 app.use(cors());
 
-const pool = mysql.createPool({
-  host: 'localhost',
-  user: 'root',
-  password: '8088795774aA#',
-  database: 'JOBPORT',  // Replace with your actual database name
-  waitForConnections: true,
-  connectionLimit: 10,
-  queueLimit: 0
-});
+// const pool = mysql.createPool({
+//   host: 'localhost',
+//   user: 'root',
+//   password: '8088795774aA#',
+//   database: 'JOBPORT',  // Replace with your actual database name
+//   waitForConnections: true,
+//   connectionLimit: 10,
+//   queueLimit: 0
+// });
 
-const db = pool.promise();
+// const db = pool.promise();
+// app.get("/signup",function({}))
+const db = require('./config/db');
 
-db.execute('CREATE DATABASE IF NOT EXISTS JOBPORT')
-  .then(() => {
-    console.log('Connected to MySQL');
-    // Further actions or start your Express server here if needed
+// Import and use signupRoutes
+const signupRoutes = require('./routes/signupRoutes');
+app.use('/api/signup', signupRoutes);
+const loginRoute = require('./routes/loginRoute');
+app.use('/api/login', loginRoute);
+
     app.listen(port, () => {
       console.log(`The server has started on port ${port}`);
     });
-  })
-  .catch(err => console.error('MySQL connection failed:', err));
