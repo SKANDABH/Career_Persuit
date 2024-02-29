@@ -7,7 +7,7 @@ const path = require('path');
 const db1 = require('./config/db');
 app.use(express.json());
 app.use(cors());
-
+app.use(cors({ credentials: true, origin: 'http://localhost:3001' }));
 // const pool = mysql.createPool({
 //   host: 'localhost',
 //   user: 'root',
@@ -31,6 +31,12 @@ const ESignupRoutes=require('./routes/ESignupRoutes');
 app.use('/api/ESignup',ESignupRoutes);
 const EloginRoutes=require('./routes/EloginRoutes');
 app.use('/api/Elogin',EloginRoutes);
+const PostjobRoutes=require('./routes/PostjobRoutes');
+app.use('/api/Postjob',PostjobRoutes);
+const HomeRoute=require('./routes/HomeRoute');
+app.use('/api/Home',HomeRoute);
+const ApplicationRoute=require('./routes/ApplicationRouter');
+app.use('/api/Application',ApplicationRoute);
 
     app.listen(port, () => {
       console.log(`The server has started on port ${port}`);

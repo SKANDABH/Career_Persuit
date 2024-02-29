@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
+import Cookies from 'js-cookie'; 
 const Signup = () => {
 
     const [formData, setFormData] = useState({
@@ -17,6 +18,11 @@ const Signup = () => {
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+  
+  const handleApply = (userId) => {
+    // Set the 'id' cookie here
+    Cookies.set('id', userId);
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -26,6 +32,8 @@ const Signup = () => {
       const response = await axios.post('http://localhost:3000/api/Signup', formData);
 
       console.log(response.data);
+      handleApply(response.data.userId);
+      console.log(response.data.userId);
     } catch (error) {
       console.error('Error during signup:', error.response.data);
       if (error.response.status === 400) {
@@ -75,7 +83,7 @@ const Signup = () => {
               <label htmlFor="address" className="form-label">Address</label>
               <textarea className="form-control" id="address" name="address" onChange={handleChange}></textarea>
             </div>
-            <button type="submit" className="btn btn-primary">Submit</button>
+            <button type="submit" className="btn btn-primary"  >Submit</button>
           </form>
         </div>
       );

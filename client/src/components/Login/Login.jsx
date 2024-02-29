@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import Cookies from 'js-cookie'; 
+
 const Login = () => {
   const [formData,setFormData]=useState({email:'',password:''});
   const handleChange = (e) => {
@@ -11,7 +13,8 @@ const Login = () => {
     try {
       const response = await axios.post('http://localhost:3000/api/Login', formData);
 
-      console.log(response.data);
+     console.log(response.data);
+
       if(response.status===200){
         alert("login sucessfull");
         window.location.href="./Home"
@@ -39,7 +42,6 @@ const Login = () => {
             </div>
             <button className="btn btn-success w-100 " type="submit">Login</button>
             <p>Don't have an account ?
-            {/* <Link to="/Signup">Create Account</Link> */}
             </p>
             <button className="btn btn-success border  w-100">Create Account</button>
             

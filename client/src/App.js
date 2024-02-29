@@ -1,10 +1,14 @@
 import './App.css';
 import Home from "./components/Home/Home"
+import EHome from "./components/Home/EHome"
 import Admin from "./components/Admin/Admin"
 import Login from "./components/Login/Login"
 import ELogin from "./components/Login/Elogin"
 import Signup from "./components/Signup/Signup"
 import ESignup from "./components/Signup/ESignup"
+import Postjob from "./components/Postjob/Postjob"
+import Application from './components/Application/Application';
+
 
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -13,12 +17,17 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/Home" element={<Home />} />
+        <Route path="/EHome" element={<EHome />} />
         <Route path="/Admin" element={<Admin />} />
         <Route path="/Login" element={<Login />} />
         <Route path="/Signup" element={<Signup />} />
         <Route path="/ESignup" element={<ESignup />} />
         <Route path="/Elogin" element={<ELogin />} />
+        <Route path="/Postjob" element={<Postjob />} />
+        <Route path="/Application" element={<Application />} />
+
+
 
 
         {/* Add other routes as needed */}

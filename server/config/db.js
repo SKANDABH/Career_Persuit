@@ -51,6 +51,42 @@ return db.query('USE JOBPORT')})
     .then(() => {
       console.log('company table created');
     })
+    .then(() => {
+      return db.execute(`
+      CREATE TABLE IF NOT EXISTS job(
+        jobid INT AUTO_INCREMENT PRIMARY KEY,
+        title VARCHAR(20) NOT NULL,
+        companyname VARCHAR(20) NOT NULL,
+        description TEXT,
+        skills VARCHAR(20),
+        experience VARCHAR(20),
+        location VARCHAR(10),
+        ctc INT,
+        postDate DATE
+    );
+    `)
+    })
+    .then(() => {
+      console.log('job table created');
+    })
+    .then(()=>{
+      return db.execute(`
+      CREATE TABLE IF NOT EXISTS application (
+        application_id INT AUTO_INCREMENT PRIMARY KEY,
+        userid INT,
+        jobid INT,
+        status BOOLEAN,
+        application_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        resume MEDIUMBLOB, -- Use MEDIUMBLOB for storing files
+        FOREIGN KEY (userid) REFERENCES users(id),
+        FOREIGN KEY (jobid) REFERENCES job(jobid)
+      );`)
+      
+    })
+    .then(() => {
+      console.log('application table created');
+    })
+    
   .catch((error) => {
     console.error('Error creating table:', error);
   });
