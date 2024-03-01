@@ -37,6 +37,9 @@ const HomeRoute=require('./routes/HomeRoute');
 app.use('/api/Home',HomeRoute);
 const ApplicationRoute=require('./routes/ApplicationRouter');
 app.use('/api/Application',ApplicationRoute);
+const EApplicationRoute=require('./routes/EApplicationRouter');
+app.use('/api/EApplication',EApplicationRoute);
+
 
     app.listen(port, () => {
       console.log(`The server has started on port ${port}`);

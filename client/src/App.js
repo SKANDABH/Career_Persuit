@@ -8,6 +8,8 @@ import Signup from "./components/Signup/Signup"
 import ESignup from "./components/Signup/ESignup"
 import Postjob from "./components/Postjob/Postjob"
 import Application from './components/Application/Application';
+import EApplication from './components/EApplication/EApplication';
+
 
 
 import React from 'react';
@@ -26,6 +28,8 @@ function App() {
         <Route path="/Elogin" element={<ELogin />} />
         <Route path="/Postjob" element={<Postjob />} />
         <Route path="/Application" element={<Application />} />
+        <Route path="/EApplication" element={<EApplication />} />
+
 
 
 
