@@ -14,10 +14,14 @@ const Login = () => {
       const response = await axios.post('http://localhost:3000/api/Login', formData);
 
      console.log(response.data);
+    
 
       if(response.status===200){
+        Cookies.set('id', response.data.userId);
+        console.log(response.data.userId);
         alert("login sucessfull");
         window.location.href="./Home"
+        
       }
     } catch (error) {
       console.error('Error during signup:', error.response.data);

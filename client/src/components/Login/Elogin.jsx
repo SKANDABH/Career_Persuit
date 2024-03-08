@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import Cookies from 'js-cookie'
 
 const Elogin = () => {
   const [formData, setFormData] = useState({ companyname: '', empid: '', password: '' });
@@ -17,8 +18,13 @@ const Elogin = () => {
 
       console.log(response.data);
       if (response.status === 200) {
+        Cookies.set('companyname',response.data.companyname);
+        console.log(response.data.companyname);
+        
+        Cookies.set('empid',response.data.empid);
+        console.log(response.data.empid);
         alert('Login successful');
-        window.location.href = './Home';
+        window.location.href = './EHome';
       }
     } catch (error) {
       console.error('Error during login:', error.response.data);

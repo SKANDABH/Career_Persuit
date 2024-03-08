@@ -44,7 +44,10 @@ const Application = () => {
         },
         withCredentials: true,
       });
-  
+      if(response.status===200){
+        alert("CONGRATUALATION !!  YOU APPLIED SUCESSFULLY");
+        window.location.href= './Home';
+      }
       console.log(response.data);
     } catch (error) {
       console.error('Error submitting application:', error);

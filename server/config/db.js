@@ -80,7 +80,7 @@ return db.query('USE JOBPORT')})
         resume MEDIUMBLOB, -- Use MEDIUMBLOB for storing files
         FOREIGN KEY (userid) REFERENCES users(id),
         FOREIGN KEY (jobid) REFERENCES job(jobid)
-      );`)
+      );`)  
       
     })
     .then(() => {

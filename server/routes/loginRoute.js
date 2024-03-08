@@ -8,9 +8,10 @@ router.post('/',async(req,res)=>{
         const [existingUsers] = await db.execute(`
           SELECT * FROM users WHERE email = ? and password=?
         `, [ email,password]);
-        if (existingUsers.length > 0) {
-
-            return res.status(200).json({ message: 'sucess in login' });
+        if (existingUsers.length > 0 && existingUsers[0].id) {
+          const userId = existingUsers[0].id;
+            return res.status(200).json({ message: 'sucess in login',userId });
+            
         }}
         catch (error) {
             console.error('Error during signup:', error);

@@ -50,22 +50,34 @@ router.get("/", async (req, res) => {
 router.post("/", async (req, res) => {
     const JOBID = req.cookies.jobid;
     const UserId = req.cookies.id;  
-    const resume = req.files.resume;
+    try{
+        if (!req.files || !req.files.resume) {
+            return res.status(400).json({ error: 'No resume file uploaded' });
 
-    // Use resume.data to get the Buffer of the file
-    const fileBuffer = resume.data;
+        }
+        const resume = req.files.resume;
 
-    const pdfData = await pdfParse(fileBuffer);
+        // Use resume.data to get the Buffer of the file
+        const fileBuffer = resume.data;
+    
+        const pdfData = await pdfParse(fileBuffer);
+    
+        // Your database insertion logic here using the extracted text
+        const [applicationResult] = await db.execute(`
+            INSERT INTO application (userid, jobid, resume_text, status) VALUES (?, ?, ?, ?);
+        `, [UserId, JOBID, pdfData.text, 0]);
+    //     const [applicationResult] = await db.execute(`
+    //     INSERT INTO application (userid, jobid, resume, status) VALUES (?, ?, ?, ?);
+    // `, [UserId, JOBID, req.file.buffer || null, 0]);
+    // res.json({ job: jobResult[0], user: userResult[0], application: applicationResult });
+    res.sendStatus(200);
 
-    // Your database insertion logic here using the extracted text
-    const [applicationResult] = await db.execute(`
-        INSERT INTO application (userid, jobid, resume_text, status) VALUES (?, ?, ?, ?);
-    `, [UserId, JOBID, pdfData.text, 0]);
-//     const [applicationResult] = await db.execute(`
-//     INSERT INTO application (userid, jobid, resume, status) VALUES (?, ?, ?, ?);
-// `, [UserId, JOBID, req.file.buffer || null, 0]);
-// res.json({ job: jobResult[0], user: userResult[0], application: applicationResult });
-
+    }
+    catch (error) {
+        console.error('Error submitting application:', error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+   
 
 })
 
