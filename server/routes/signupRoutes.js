@@ -20,7 +20,8 @@ else{
       VALUES (?, ?, ?, ?, ?, ?, ?, ?)
     `, [username, email, password, phone, skills, education, experience, address]);
 
-    res.json({ message: 'User signed up successfully', userId: results.insertId });
+    res.status(200).json({ message: 'User signed up successfully', userId: results.insertId });
+
   } }catch (error) {
     console.error('Error during signup:', error);
     res.status(500).json({ error: 'Internal Server Error' });

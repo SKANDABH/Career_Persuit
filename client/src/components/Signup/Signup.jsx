@@ -34,6 +34,10 @@ const Signup = () => {
       console.log(response.data);
       handleApply(response.data.userId);
       console.log(response.data.userId);
+      if(response.status==200){
+        alert("!! Signup completed sucessfully");
+        window.location.href = '/login';
+      }
     } catch (error) {
       console.error('Error during signup:', error.response.data);
       if (error.response.status === 400) {

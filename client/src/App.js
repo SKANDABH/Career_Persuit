@@ -9,6 +9,7 @@ import ESignup from "./components/Signup/ESignup"
 import Postjob from "./components/Postjob/Postjob"
 import Application from './components/Application/Application';
 import EApplication from './components/EApplication/EApplication';
+import MHome from "./components/MHome/MHome.jsx";
 
 
 
@@ -19,6 +20,7 @@ function App() {
   return (
     <Router>
       <Routes>
+      <Route path="/" element={<MHome />} />
         <Route path="/Home" element={<Home />} />
         <Route path="/EHome" element={<EHome />} />
         <Route path="/Admin" element={<Admin />} />

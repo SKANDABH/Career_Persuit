@@ -1,6 +1,8 @@
+// ESignup.jsx
+
 import React, { useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
+import './ESignup.css'; // Import your CSS file
 
 const ESignup = () => {
   const [formData, setFormData] = useState({
@@ -8,7 +10,7 @@ const ESignup = () => {
     empid: '',
     password: '',
     description: '',
-    industry: ''
+    industry: '',
   });
 
   const handleChange = (e) => {
@@ -33,76 +35,77 @@ const ESignup = () => {
   };
 
   return (
-    <div className="container mt-5">
-      <h2 className="mb-4">Sign Up</h2>
-      <form onSubmit={handleSubmit}>
-        <div className="mb-3">
-          <label htmlFor="companyname" className="form-label">
-            Company Name
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            id="companyname"
-            name="companyname"
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="mb-3">
-          <label htmlFor="empid" className="form-label">
-            Employee ID
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            id="empid"
-            name="empid"
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="mb-3">
-          <label htmlFor="password" className="form-label">
-            Password
-          </label>
-          <input
-            type="password"
-            className="form-control"
-            id="password"
-            name="password"
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="mb-3">
-          <label htmlFor="description" className="form-label">
-            Description
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            id="description"
-            name="description"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="mb-3">
-          <label htmlFor="industry" className="form-label">
-            Industry
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            id="industry"
-            name="industry"
-            onChange={handleChange}
-          />
-        </div>
-        <button type="submit" className="btn btn-primary">
-          Submit
-        </button>
-      </form>
+    <div className="signup-container">
+      <div className="signup-form">
+        <form onSubmit={handleSubmit}>
+          <div className="mb-3">
+            <label htmlFor="companyname" className="form-label">
+              Company Name
+            </label>
+            <input
+              type="text"
+              className="form-input rounded-0"
+              id="companyname"
+              name="companyname"
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="empid" className="form-label">
+              Employee ID
+            </label>
+            <input
+              type="text"
+              className="form-input rounded-0"
+              id="empid"
+              name="empid"
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="password" className="form-label">
+              Password
+            </label>
+            <input
+              type="password"
+              className="form-input rounded-0"
+              id="password"
+              name="password"
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="description" className="form-label">
+              Description
+            </label>
+            <input
+              type="text"
+              className="form-input rounded-0"
+              id="description"
+              name="description"
+              onChange={handleChange}
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="industry" className="form-label">
+              Industry
+            </label>
+            <input
+              type="text"
+              className="form-input rounded-0"
+              id="industry"
+              name="industry"
+              onChange={handleChange}
+            />
+          </div>
+          <button type="submit" className="submit-button">
+            Submit
+          </button>
+        </form>
+      </div>
     </div>
   );
 };

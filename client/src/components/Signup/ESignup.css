@@ -1,19 +1,20 @@
-/* Signup.css */
+/* ESignup.css */
 
 .signup-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 180vh;
-    background-color: #1f1f1f; /* Set your desired background color (blackish) */
+    height: 100vh;
+    background-color: #1a1a1a; /* Set your desired background color (blackish) */
   }
   
   .signup-form {
     background-color: #fff;
     padding: 20px;
-    width: 80%;
+    width: 25%;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width:70vh;
   }
   
   .form-label {
@@ -21,7 +22,7 @@
     color: #333;
   }
   
-  .form-control {
+  .form-input {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
@@ -29,7 +30,7 @@
     border-radius: 5px;
   }
   
-  .btn-primary {
+  .submit-button {
     background-color: #3498db;
     color: #fff;
     border: none;
@@ -40,7 +41,7 @@
     transition: background-color 0.3s;
   }
   
-  .btn-primary:hover {
+  .submit-button:hover {
     background-color: #2980b9;
   }
   

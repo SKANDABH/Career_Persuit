@@ -1,0 +1,49 @@
+.main-home-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #1f1f1f; /* Set your desired background color */
+    color: #fff; /* Set text color */
+  }
+  
+  .welcome-section {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .button {
+    display: inline-block;
+    padding: 15px 30px;
+    margin: 10px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    border: 3px solid #4caf50; /* Set border color */
+    color: #fff; /* Set text color */
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+  }
+  
+  .button:hover {
+    background-color: #45a049; /* Set hover background color */
+    color: #fff; /* Set hover text color */
+    transform: scale(1.05); /* Add a slight scale effect on hover */
+  }
+  
+  .user-button {
+    background-color: #3498db; /* Set user button background color */
+    border-color: #3498db; /* Set user button border color */
+  }
+  
+  .employee-button {
+    background-color: #e74c3c; /* Set employee button background color */
+    border-color: #e74c3c; /* Set employee button border color */
+  }
+  

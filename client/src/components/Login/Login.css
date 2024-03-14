@@ -1,0 +1,51 @@
+/* Login.css */
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #1f1f1f; /* Set your desired background color */
+    color: #fff; /* Set text color */
+  }
+  
+  .login-form {
+    background-color: #008cff; /* Set form background color */
+    padding: 20px;
+    border-radius: 10px;
+    width: 25%;
+  }
+  
+  .login-form label {
+    color: #fff; /* Set label text color */
+  }
+  
+  .login-form input {
+    background-color: #fff; /* Set input background color */
+    color: #333; /* Set input text color */
+  }
+  
+  .login-form button {
+    background-color: #19b105; /* Set login button background color */
+    border: 2px solid #2ecc71; /* Set login button border color */
+    color: #fff; /* Set login button text color */
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+  }
+  
+  .login-form button:hover {
+    background-color: #004d20; /* Set hover background color */
+    color: #fff; /* Set hover text color */
+    transform: scale(1.05); /* Add a slight scale effect on hover */
+  }
+  
+  .login-form p {
+    color: #fff; /* Set paragraph text color */
+    margin-top: 10px;
+    margin-bottom: 0;
+  }
+  

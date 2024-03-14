@@ -11,7 +11,7 @@
             const fetchApplications = async () => {
                 try {
                 
-                    const companyname = Cookies.get('companyname'); // Ensure correct cookie name
+                    const companyname = Cookies.get('companyname'); 
                     const response = await axios.get(`http://localhost:3000/api/EApplication?companyname=${companyname}`);
 
                     if (response.status === 404) {
@@ -48,7 +48,7 @@
                                 Application Date: {new Date(application.application_date).toLocaleString()}
                             </p>
                             <p className="application-text">Resume Text: {application.resume_text}</p>
-                            {/* Additional fields can be displayed similarly */}
+                            <button >APPROVE</button>
                         </li>
                     ))}
                 </ul>

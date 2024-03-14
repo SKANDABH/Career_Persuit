@@ -1,16 +1,17 @@
+// Home.jsx
+
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import Cookies from 'js-cookie'
-
+import Cookies from 'js-cookie';
+import './Home.css'; // Import your CSS file
 
 const Home = () => {
-
-
   const [jobs, setJobs] = useState([]);
-  const handleApply= (jobid)  => {
-    Cookies.set('jobid',jobid)
-  }
+  
+  const handleApply = (jobid) => {
+    Cookies.set('jobid', jobid);
+  };
 
   useEffect(() => {
     const fetchJobs = async () => {
@@ -21,18 +22,17 @@ const Home = () => {
       } catch (error) {
         console.error('Error fetching jobs:', error);
       }
-    }; 
+    };
     fetchJobs();
-  }, []); 
- 
+  }, []);
 
   return (
-    <div>
-      <h1>Job Listings  </h1>
-      <div style={{ backgroundColor: 'lightblue', padding: '20px',paddingBottom: '20px', borderRadius: '10px', margin: '10px',marginBottom:'10px' }}>
+    <div className="home-container">
+      <h1>Job Listings</h1>
+      <div className="job-listings">
         <ul>
           {jobs.map((job) => (
-            <li key={job.jobid} style={{ marginBottom: '15px', border: '1px solid #ddd', padding: '10px', borderRadius: '5px' }}>
+            <li key={job.jobid} className="job-item">
               <h3>{job.title}</h3>
               <p>Company: {job.companyname}</p>
               <p>Description: {job.description}</p>
@@ -42,17 +42,13 @@ const Home = () => {
               <p>Salary-CTC: {job.ctc}</p>
               <p>Post Date: {job.postDate}</p>
               <Link to={{ pathname: "/Application" }}>
-  <button onClick={() => handleApply(job.jobid)}>Apply</button>
-</Link>
-
-
-              
+                <button className="apply-button" onClick={() => handleApply(job.jobid)}>
+                  Apply
+                </button>
+              </Link>
             </li>
-            
           ))}
         </ul>
-        
-        <br/>
       </div>
     </div>
   );

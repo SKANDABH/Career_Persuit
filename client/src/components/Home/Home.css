@@ -1,0 +1,43 @@
+/* Home.css */
+
+.home-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #1f1f1f;
+    color: #fff; 
+  }
+  
+  .job-listings {
+    background-color: #2c3e50; /* Set job listings background color */
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px;
+    width: 150vh;
+  }
+  
+  .job-item {
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .apply-button {
+    background-color: #3498db; /* Set apply button background color */
+    border: 2px solid #3498db; /* Set apply button border color */
+    color: #fff; 
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+  }
+  
+  .apply-button:hover {
+    background-color: #2980b9; /* Set hover background color */
+    color: #fff; /* Set hover text color */
+    transform: scale(1.05); /* Add a slight scale effect on hover */
+  }
+  
