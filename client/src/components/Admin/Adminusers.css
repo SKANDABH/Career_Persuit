@@ -1,0 +1,72 @@
+.admin-users {
+    margin-top: -1rem;
+    background-color: #40514e;
+  }
+  
+  .subtitle {
+    font-size: 2.5rem;
+    color: #ff6f61; /* Coral red */
+    margin-bottom: 10px;
+    margin-left: 40%;
+  }
+  
+  .user-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .user-item {
+    margin-bottom: 10px;
+    background-color: #f4f4f4; /* Light gray */
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .user-item:hover {
+    transform: translateY(-2px);
+  }
+  
+  .username {
+    font-weight: bold;
+    color: #40514e; /* Dark teal */
+  }
+  
+  .email {
+    color: #7389ae; /* Light blue */
+  }
+  
+  .btnus1 {
+    position: absolute;
+    /* margin-right: -20%; */
+    left: 80%;
+    padding: 8px 16px;
+    border-color: black;
+    border-radius: 4px;
+    background-color: #407dff; /* Coral red */
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .btnus1:hover {
+    background-color: #200096; /* Lighter coral red */
+  }
+  .btnus2 {
+    position: absolute;
+    left: 90%;
+    margin-right:20px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #e84839; /* Coral red */
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .btnus2:hover {
+    background-color: #aa1700; /* Lighter coral red */
+  }
+  

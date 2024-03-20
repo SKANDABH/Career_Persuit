@@ -1,46 +1,44 @@
-// AdminPage.jsx
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import './Admin.css'; // Import CSS file for styling
+import {Link} from 'react-router-dom'
 
-const AdminPage = () => {
-  const [unapprovedCompanies, setUnapprovedCompanies] = useState([]);
+const Admin = () => { 
+  const [employees, setEmployees] = useState([]);
 
-  const fetchUnapprovedCompanies = async () => {
-    try {
-      const response = await axios.get('http://localhost:3000/admin/unapproved');
-      setUnapprovedCompanies(response.data.companies);
-    } catch (error) {
-      console.error('Error fetching unapproved companies:', error);
-    }
-  };
+  
 
-  useEffect(() => {
-    fetchUnapprovedCompanies();
-  }, []);
-
-  const handleApprove = async (companyId) => {
-    try {
-      await axios.put(`http://localhost:3000/admin/approve/${companyId}`);
-      // Refresh the list of unapproved companies after approval
-      fetchUnapprovedCompanies();
-    } catch (error) {
-      console.error('Error approving company:', error);
-    }
+  const fetchEmployees = async () => {
+   
   };
 
   return (
-    <div>
-      <h2>Unapproved Companies</h2>
-      <ul>
-        {unapprovedCompanies.map((company) => (
-          <li key={company.companyId}>
-            {company.companyName}
-            <button onClick={() => handleApprove(company.companyId)}>Approve</button>
-          </li>
-        ))}
-      </ul>
+    <div className="admin-page">
+      <h1 className="title">Admin Page</h1>
+      <div className="buttons-container">
+        <Link to='/Adminusers'><button className="view-button" >View Users</button></Link>
+        {/* <button className="view-button">View Employees</button> */}
+      </div>
+{/* 
+      <div>
+        <h2 className="subtitle">Users</h2>
+        <ul className="list">
+          {users.map(user => (
+            <li className="list-item" key={user.id}>{user.username} - {user.email}</li>
+          ))}
+        </ul>
+      </div> */}
+
+      {/* <div>
+        <h2 className="subtitle">Employees</h2>
+        <ul className="list">
+          {employees.map(employee => (
+            <li className="list-item" key={employee.id}>{employee.name} - {employee.department}</li>
+          ))}
+        </ul>
+      </div> */}
     </div>
   );
 };
 
-export default AdminPage;
+export default Admin;

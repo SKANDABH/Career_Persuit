@@ -39,6 +39,8 @@ const ApplicationRoute=require('./routes/ApplicationRouter');
 app.use('/api/Application',ApplicationRoute);
 const EApplicationRoute=require('./routes/EApplicationRouter');
 app.use('/api/EApplication',EApplicationRoute);
+const AdminRoute=require('./routes/AdminRouter');
+app.use('/api/Adminusers',AdminRoute);
 
 
     app.listen(port, () => {

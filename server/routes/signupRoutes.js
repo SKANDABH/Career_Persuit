@@ -13,6 +13,7 @@ router.post('/', async (req, res) => {
     if (existingUsers.length > 0) {
 
         return res.status(400).json({ message: 'Email already in use' });
+        
     }
 else{
     const [results] = await db.execute(`
