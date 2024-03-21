@@ -15,7 +15,7 @@ router.post('/', async (req, res) => {
 
     if (existingUsers.length > 0) {
 
-        return res.status(400).json({ message: 'Email already in use' });
+        return res.status(400).json({ message: 'Company already registered' });
     }
 else{
     const [results] = await db.execute(`
@@ -29,8 +29,10 @@ else{
         description,
         industry]);
 
-    res.json({ message: 'User signed up successfully', userId: results.insertId });
-  } }catch (error) {
+
+        res.status(200).json({ message: 'User signed up successfully', userId: results.insertId });
+  } 
+}catch (error) {
     console.error('Error during signup:', error);
     res.status(500).json({ error: 'Internal Server Error' });
   }

@@ -17,7 +17,7 @@ const Admin = () => {
       <h1 className="title">Admin Page</h1>
       <div className="buttons-container">
         <Link to='/Adminusers'><button className="view-button" >View Users</button></Link>
-        {/* <button className="view-button">View Employees</button> */}
+        <Link to='/Admincmp'><button className="view-button">View Employees</button></Link>
       </div>
 {/* 
       <div>

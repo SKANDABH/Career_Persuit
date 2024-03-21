@@ -1,5 +1,3 @@
-// Home.jsx
-
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
@@ -8,7 +6,8 @@ import './Home.css'; // Import your CSS file
 
 const Home = () => {
   const [jobs, setJobs] = useState([]);
-  
+  const [searchTerm, setSearchTerm] = useState('');
+
   const handleApply = (jobid) => {
     Cookies.set('jobid', jobid);
   };
@@ -26,12 +25,24 @@ const Home = () => {
     fetchJobs();
   }, []);
 
+  const filteredJobs = jobs.filter(job =>
+    job.title.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <div className="home-container">
       <h1>Job Listings</h1>
+      <div className="search-bar">
+        <input
+          type="text"
+          placeholder="Search by job title"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
+      </div>
       <div className="job-listings">
         <ul>
-          {jobs.map((job) => (
+          {filteredJobs.map((job) => (
             <li key={job.jobid} className="job-item">
               <h3>{job.title}</h3>
               <p>Company: {job.companyname}</p>

@@ -25,10 +25,14 @@ const ESignup = () => {
       const response = await axios.post('http://localhost:3000/api/ESignup', formData);
 
       console.log(response.data);
+      if (response.status === 200) {
+        alert('Signup sucess fully');
+        window.location.href = '/Elogin';
+      }
     } catch (error) {
       console.error('Error during signup:', error.response.data);
       if (error.response.status === 400) {
-        alert('Email already exists');
+        alert('Company already exists');
         window.location.href = '/Elogin';
       }
     }

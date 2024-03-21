@@ -1,0 +1,72 @@
+.admin-companies {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .admin-companies > div {
+    flex: 1;
+  }
+  
+  .admin-companies ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .admin-companies li {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+  }
+  
+
+  
+  .btn-verify{
+position:relative;
+right: -70%;
+background-color: #007bff;
+color: white;
+border: none;
+padding: 5px 10px;
+cursor: pointer;
+border-radius: 3px;
+}
+  
+  .btn-delete {
+    background-color: #dc3545;
+    margin-right: 0;
+    position: relative;
+    color: #f0f0f0;
+    border: none;
+padding: 5px 10px;
+cursor: pointer;
+border-radius: 3px;
+  }
+  
+  .btn-verify:hover,
+  .btn-delete:hover {
+    opacity: 0.8;
+  }
+  .btn-verified{
+    position: relative;
+    left: 20%;
+    background-color: rgb(85, 255, 110);
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+  }
+  .admin-companies1{
+    background-color: aliceblue;
+    margin-right: 2rem;
+    border-radius: 1cm;
+    width:40%;
+    padding:5px;
+  }

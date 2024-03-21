@@ -1,5 +1,3 @@
-// Elogin.jsx
-
 import React, { useState } from 'react';
 import axios from 'axios';
 import Cookies from 'js-cookie';
@@ -22,13 +20,18 @@ const Elogin = () => {
 
       console.log(response.data);
       if (response.status === 200) {
-        Cookies.set('companyname', response.data.companyname);
-        console.log(response.data.companyname);
+        if (response.data.verification === 1) {
+          Cookies.set('companyname', response.data.companyname);
+          console.log(response.data.companyname);
 
-        Cookies.set('empid', response.data.empid);
-        console.log(response.data.empid);
-        alert('Login successful');
-        window.location.href = './EHome';
+          Cookies.set('empid', response.data.empid);
+          console.log(response.data.empid);
+          alert('Login successful');
+          window.location.href = './EHome';
+        } else {
+          alert('Your credentials are not yet verified. Verification may take up to 24 working hours. If additional details are required, we will contact you.');
+
+        }
       }
     } catch (error) {
       console.error('Error during login:', error.response.data);
