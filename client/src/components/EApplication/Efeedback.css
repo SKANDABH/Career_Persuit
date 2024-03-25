@@ -1,0 +1,34 @@
+.feedback-container {
+    padding: 20px;
+    background-color: #000; /* Black background color for the container */
+  }
+  
+  .feedback-heading {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #fff; /* White color for the heading text */
+  }
+  
+  .feedback-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .feedback-item {
+    margin-bottom: 20px;
+    border: 1px solid #333; /* Dark gray border for the feedback items */
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #111; /* Dark background color for the feedback items */
+  }
+  
+  .feedback-item h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #fff; /* White color for the feedback item titles */
+  }
+  
+  .feedback-item p {
+    color: #ccc; /* Light gray color for the feedback item details */
+  }
+  

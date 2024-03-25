@@ -1,0 +1,128 @@
+/* Ejobupdate.css */
+
+/* Background color for the page */
+.eju-page {
+    background-color: #000; /* Black background color */
+    color: #fff; /* White text color */
+    padding: 20px; /* Add padding for better readability */
+  }
+  
+  /* Styles for heading */
+  .eju-heading {
+    font-size: 44px;
+    margin-bottom: 20px;
+  }
+  
+  /* Styles for job list */
+  .eju-job-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  /* Styles for job item */
+ /* Styles for job item */
+/* Styles for job item */
+.eju-job-item {
+    margin-bottom: 20px;
+    border: solid whitesmoke;
+    padding: 20px;
+    background-color: #333; /* Dark gray background color */
+  }
+  
+  
+  
+  /* Styles for delete button */
+  .eju-delete-btn {
+    background-color: #ff5c5c;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  
+  .eju-delete-btn:hover {
+    background-color: #ff3333;
+  }
+  
+  /* Styles for update button */
+  .eju-update-btn {
+    background-color: #4caf50;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .eju-update-btn:hover {
+    background-color: #45a049;
+  }
+  
+  /* Styles for modal container */
+  .eju-modal-container {
+    display: flex;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Styles for modal content */
+  .eju-modal-content {
+    background-color: #222; /* Dark gray background color */
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    position: relative;
+  }
+  
+  /* Styles for close button */
+  .eju-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #fff; /* White text color */
+  }
+  
+  /* Styles for title */
+  .eju-title {
+    margin-bottom: 10px;
+    font-size: 50px;
+  }
+  
+  /* Styles for label */
+  .eju-label {
+    margin-bottom: 5px;
+  }
+  
+  /* Styles for input text */
+  .eju-input-text {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+  }
+  
+  /* Styles for button */
+  .eju-button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .eju-button:hover {
+    background-color: #45a049;
+  }
+  

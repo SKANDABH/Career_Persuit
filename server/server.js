@@ -43,8 +43,12 @@ const AdminRoute=require('./routes/AdminRouter');
 app.use('/api/Adminusers',AdminRoute);
 const AdmincmpRouter=require('./routes/AdmincmpRouter');
 app.use('/api/Admincmp',AdmincmpRouter);
-
-
+const ApplicationstatusRoute=require('./routes/ApplicationstatusRouter');
+app.use('/api/Applicationstatus',ApplicationstatusRoute);
+const Efeedback=require('./routes/EfeedbackRouter');
+app.use('/api/Efeedback',Efeedback);
+const Ejobupdate=require('./routes/EjobupdateRouter');
+app.use('/api/Ejobupdate',Ejobupdate);
     app.listen(port, () => {
       console.log(`The server has started on port ${port}`);
     });

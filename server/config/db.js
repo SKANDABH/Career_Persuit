@@ -18,6 +18,11 @@ const checkVerificationColumn = async () => {
   const [columns] = await db.query(`SHOW COLUMNS FROM company LIKE 'verification'`);
   return columns.length > 0; // Return true if column exists, false otherwise
 };
+const checkempidColumn = async () => {
+  const [columns] = await db.query(`SHOW COLUMNS FROM job LIKE 'empid'`);
+  return columns.length > 0; // Return true if column exists, false otherwise
+};
+
 
 db.execute('CREATE DATABASE IF NOT EXISTS JOBPORT')
   .then(() => {
@@ -88,6 +93,18 @@ db.execute('CREATE DATABASE IF NOT EXISTS JOBPORT')
   .then(() => {
     console.log('Job table created');
   })
+  .then(async () => {
+    if (!alterationDone) {
+      const empidColumnExists = await checkempidColumn();
+      if (!empidColumnExists) {
+        await db.execute('ALTER TABLE job ADD COLUMN empid VARCHAR(10), ADD CONSTRAINT fk_job_empid FOREIGN KEY (empid) REFERENCES company(empid);');
+        alterationDone = true; // Set the flag to true to indicate that the alteration has been done
+        console.log('Table altered');
+      } else {
+        console.log('empid column already exists');
+      }
+    }
+  })
   .then(() => {
     return db.execute(`
       CREATE TABLE IF NOT EXISTS application (
@@ -104,6 +121,31 @@ db.execute('CREATE DATABASE IF NOT EXISTS JOBPORT')
   })
   .then(() => {
     console.log('Application table created');
+  })
+  .then(() => {
+    return db.execute(`
+    CREATE TABLE IF NOT EXISTS feedback (
+      feedbackid INT AUTO_INCREMENT,
+      jobid INT,
+      id INT,
+      empid VARCHAR(10),
+      rating INT,
+      comments TEXT,
+      Timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+      PRIMARY KEY (feedbackid),  -- Making feedbackid the primary key
+      UNIQUE KEY (jobid, id),    -- Creating a unique constraint on jobid and id
+      FOREIGN KEY (jobid) REFERENCES job(jobid),
+      FOREIGN KEY (id) REFERENCES users(id),
+      FOREIGN KEY (empid) REFERENCES company(empid)
+  );
+  
+  
+  
+    
+    `);
+  })
+  .then(() => {
+    console.log('Feedback table created');
   })
   .catch((error) => {
     console.error('Error:', error);

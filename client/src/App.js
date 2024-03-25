@@ -12,6 +12,13 @@ import EApplication from './components/EApplication/EApplication';
 import MHome from "./components/MHome/MHome.jsx";
 import Adminuser from "./components/Admin/Adminusers"
 import Admincmp from "./components/Admin/Admincmp"
+import Userhome from "./components/Home/Userhome"
+import Applicationstatus from './components/Application/Applicationstatus';
+import Efeedback from "./components/EApplication/Efeedback"
+import Ejobupdate from "./components/Postjob/Ejobupdate"
+
+
+
 
 
 
@@ -27,6 +34,7 @@ function App() {
       <Route path="/" element={<MHome />} />
         <Route path="/Home" element={<Home />} />
         <Route path="/EHome" element={<EHome />} />
+        <Route path="/Userhome" element={<Userhome />} />
         <Route path="/Admin" element={<Admin />} />
         <Route path="/Adminusers" element={<Adminuser />} />
         <Route path="/Admincmp" element={<Admincmp />} />
@@ -35,8 +43,12 @@ function App() {
         <Route path="/ESignup" element={<ESignup />} />
         <Route path="/Elogin" element={<ELogin />} />
         <Route path="/Postjob" element={<Postjob />} />
+        <Route path="/Ejobupdate" element={<Ejobupdate />} />
         <Route path="/Application" element={<Application />} />
+        <Route path="/Applicationstatus" element={<Applicationstatus />} />
         <Route path="/EApplication" element={<EApplication />} />
+        <Route path="/Efeedback" element={<Efeedback />} />
+
         
 
 

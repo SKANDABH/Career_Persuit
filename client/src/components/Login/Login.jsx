@@ -23,7 +23,7 @@ const Login = () => {
       if (response.status === 200) {
         Cookies.set('id', response.data.userId);
         alert('Login successful');
-        window.location.href = './Home';
+        window.location.href = './Userhome';
       }
     } catch (error) {
       console.error('Error during login:', error.response.data);

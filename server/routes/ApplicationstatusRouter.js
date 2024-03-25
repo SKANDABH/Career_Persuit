@@ -11,8 +11,8 @@ router.get("/", async (req, res) => {
     try {
         
        
-        const companyname = req.query.companyname;
-        console.log('CMP', companyname);
+        const userId = req.query.userId;
+        console.log('userid',userId );
         const [result] = await db.execute(`
         SELECT
         A.application_id,
@@ -35,11 +35,12 @@ router.get("/", async (req, res) => {
         job J,
         users U
     WHERE
+        
         A.userid = U.id
         AND A.jobid = J.jobid
-        AND J.companyname =?;
+        AND U.id=?`
     
-`, [companyname]);
+, [userId]);
 
 // if ({{result}} === null) {
 //     res.sendStatus(404);
@@ -57,16 +58,16 @@ if (result === null || result.length === 0) {
 });
 
 
-router.put('/Approve/:application_id', async (req, res) => {
-    const { application_id } = req.params;
-    try {
-        await db.execute('UPDATE Application SET status = 1 WHERE application_id = ?', [application_id]);
-        res.status(200).json({ message: 'Application approved successfully' });
-    } catch (error) {
-        console.error('Error approving application:', error);
-        res.status(500).json({ error: 'Internal server error' });
-    }
-});
+// router.put('/Approve/:application_id', async (req, res) => {
+//     const { application_id } = req.params;
+//     try {
+//         await db.execute('UPDATE Application SET status = 1 WHERE application_id = ?', [application_id]);
+//         res.status(200).json({ message: 'Application approved successfully' });
+//     } catch (error) {
+//         console.error('Error approving application:', error);
+//         res.status(500).json({ error: 'Internal server error' });
+//     }
+// });
 
 
 module.exports = router;

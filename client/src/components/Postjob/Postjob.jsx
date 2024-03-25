@@ -2,6 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 import { useState } from 'react';
+import Cookies from 'js-cookie';
 const Postjob = () => {
     const [formData,setFormData]=useState({
         title:'',
@@ -20,13 +21,13 @@ const Postjob = () => {
   };
   const handleSubmit = async(e) => {
     e.preventDefault();
-    try{
-        const response = await axios.post('http://localhost:3000/api/Postjob', formData);
+    try{const empid=Cookies.get('empid')
+    const response = await axios.post(`http://localhost:3000/api/Postjob/${empid}`, formData);
           if(response.ok){
             alert("Job posted sucessfully")
           }
     }
-    catch{}
+    catch(error){}
     
   };
 

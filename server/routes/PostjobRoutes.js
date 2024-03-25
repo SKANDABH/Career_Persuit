@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const { db } = require('../config/db');
 
-router.post('/', async (req, res) => {
+router.post('/:empid', async (req, res) => {
   const {title,companyname,description,skills,experience,location,
   ctc,
   postDate } = req.body;
@@ -17,14 +17,17 @@ router.post('/', async (req, res) => {
 //         return res.status(400).json({ message: 'Email already in use' });
 //     }
 // else{
+  const empid  = req.params.empid;
+  console.log(empid)
+
     const [results] = await db.execute(`
       INSERT INTO job (title,companyname,description,skills,experience,location,
         ctc,
-        postDate)
-      VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+        postDate,empid)
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
     `, [title,companyname,description,skills,experience,location,
       ctc,
-      postDate]);
+      postDate,empid]);
 
     res.json({ message: 'User signed up successfully', userId: results.insertId });
   } catch (error) {
