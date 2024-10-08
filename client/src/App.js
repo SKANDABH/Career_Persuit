@@ -1,4 +1,5 @@
 import './App.css';
+import Header from "./components/Header/Header"
 import Home from "./components/Home/Home"
 import EHome from "./components/Home/EHome"
 import Admin from "./components/Admin/Admin"
@@ -17,47 +18,36 @@ import Applicationstatus from './components/Application/Applicationstatus';
 import Efeedback from "./components/EApplication/Efeedback"
 import Ejobupdate from "./components/Postjob/Ejobupdate"
 
-
-
-
-
-
-
-
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <Router>
-      <Routes>
-      <Route path="/" element={<MHome />} />
-        <Route path="/Home" element={<Home />} />
-        <Route path="/EHome" element={<EHome />} />
-        <Route path="/Userhome" element={<Userhome />} />
-        <Route path="/Admin" element={<Admin />} />
-        <Route path="/Adminusers" element={<Adminuser />} />
-        <Route path="/Admincmp" element={<Admincmp />} />
-        <Route path="/Login" element={<Login />} />
-        <Route path="/Signup" element={<Signup />} />
-        <Route path="/ESignup" element={<ESignup />} />
-        <Route path="/Elogin" element={<ELogin />} />
-        <Route path="/Postjob" element={<Postjob />} />
-        <Route path="/Ejobupdate" element={<Ejobupdate />} />
-        <Route path="/Application" element={<Application />} />
-        <Route path="/Applicationstatus" element={<Applicationstatus />} />
-        <Route path="/EApplication" element={<EApplication />} />
-        <Route path="/Efeedback" element={<Efeedback />} />
-
-        
-
-
-
-
-
-        {/* Add other routes as needed */}
-      </Routes>
-    </Router>
+    <div>
+      <Header />
+      <Router>
+        <Routes>
+          <Route path="/" element={<MHome />} />
+          <Route path="/Home" element={<Home />} />
+          <Route path="/EHome" element={<EHome />} />
+          <Route path="/Userhome" element={<Userhome />} />
+          <Route path="/Admin" element={<Admin />} />
+          <Route path="/Adminusers" element={<Adminuser />} />
+          <Route path="/Admincmp" element={<Admincmp />} />
+          <Route path="/Login" element={<Login />} />
+          <Route path="/Signup" element={<Signup />} />
+          <Route path="/ESignup" element={<ESignup />} />
+          <Route path="/Elogin" element={<ELogin />} />
+          <Route path="/Postjob" element={<Postjob />} />
+          <Route path="/Ejobupdate" element={<Ejobupdate />} />
+          <Route path="/Application" element={<Application />} />
+          <Route path="/Applicationstatus" element={<Applicationstatus />} />
+          <Route path="/EApplication" element={<EApplication />} />
+          <Route path="/Efeedback" element={<Efeedback />} />
+          {/* Add other routes as needed */}
+        </Routes>
+      </Router>
+    </div>
   );
 }
 

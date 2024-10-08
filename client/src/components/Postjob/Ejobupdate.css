@@ -5,6 +5,7 @@
     background-color: #000; /* Black background color */
     color: #fff; /* White text color */
     padding: 20px; /* Add padding for better readability */
+    margin-top: 60px;
   }
   
   /* Styles for heading */
@@ -62,6 +63,7 @@
   
   /* Styles for modal container */
   .eju-modal-container {
+    z-index: 3000;
     display: flex;
     position: fixed;
     z-index: 1;
@@ -72,6 +74,7 @@
     background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
     align-items: center;
     justify-content: center;
+    margin-top: 20px;
   }
   
   /* Styles for modal content */

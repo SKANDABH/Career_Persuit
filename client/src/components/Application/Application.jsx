@@ -78,6 +78,10 @@ const Application = () => {
               Upload Resume:
             </label>
             <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" onChange={handleFileChange} />
+            <br/>
+            <br/>
+
+
             <button type="submit" className="submit-button">
               Submit Application
             </button>

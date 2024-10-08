@@ -138,11 +138,7 @@ db.execute('CREATE DATABASE IF NOT EXISTS JOBPORT')
       FOREIGN KEY (id) REFERENCES users(id),
       FOREIGN KEY (empid) REFERENCES company(empid)
   );
-  
-  
-  
-    
-    `);
+  `);
   })
   .then(() => {
     console.log('Feedback table created');

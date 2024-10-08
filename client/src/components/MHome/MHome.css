@@ -47,3 +47,7 @@
     border-color: #e74c3c; /* Set employee button border color */
   }
   
+  .admin-button{
+    background-color: darkgray;
+    border-color: #fff;
+  }

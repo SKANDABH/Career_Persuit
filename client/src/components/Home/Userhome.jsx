@@ -9,10 +9,16 @@ const Userhome = () => {
     <div className="user-home-container">
       <div className="background-color">
         <Link to='/Home' className="link">
-          <img src={imgjob} alt="Job Search" className="image" />
+          <div className="image-container">
+            <img src={imgjob} alt="Job Search" className="image" />
+            <p className="label">Job Search</p>
+          </div>
         </Link>
         <Link to='/Applicationstatus' className="link">
-          <img src={imgstatus} alt="Application Status" className="image" />
+          <div className="image-container">
+            <img src={imgstatus} alt="Application Status" className="image" />
+            <p className="label1">Application Status</p>
+          </div>
         </Link>
       </div>
     </div>

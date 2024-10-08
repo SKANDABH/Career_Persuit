@@ -12,6 +12,8 @@ const MHome = () => {
       <div className="button-container">
         <Link to='/Login' className="button user-button">USER</Link>
         <Link to='/ELogin' className="button employee-button">EMPLOYEE</Link>
+        <Link to='/admin' className="button admin-button">ADMIN</Link>
+
       </div>
     </div>
   );
